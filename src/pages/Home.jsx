@@ -1,5 +1,5 @@
 import '../styles/Home.css';
-import bgImage from '../assets/images/dark-mode/bg-image.svg';
+import bgImage from '../assets/dark-mode/bg-image.svg';
 
 const home = () => {
   return (
