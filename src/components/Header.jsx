@@ -48,13 +48,13 @@ export default function Header() {
           exclusive
           onChange={handleAlignment}
           aria-label="Page">
-          <ToggleButton value="home" href="/">
+          <ToggleButton value="home" selected={false} href="/">
             HOME
           </ToggleButton>
-          <ToggleButton value="projects" href="/projects">
+          <ToggleButton value="projects" selected={false} href="/projects">
             PROJECTS
           </ToggleButton>
-          <ToggleButton value="contact" href="/contact">
+          <ToggleButton value="contact" selected={false} href="/contact">
             CONTACT
           </ToggleButton>
         </ToggleButtonGroup>
