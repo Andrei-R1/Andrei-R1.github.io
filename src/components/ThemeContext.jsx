@@ -15,6 +15,12 @@ export function ThemeProviderWrapper({ children }) {
   const theme = createTheme({
     palette: {
       mode,
+      background: {
+        default: mode === 'dark' ? '#000000' : '#ffffff',
+      },
+      text: {
+        primary: mode === 'dark' ? '#ffffff' : '#000000',
+      },
     },
   })
 

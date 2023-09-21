@@ -10,7 +10,6 @@ function Home() {
   const { mode } = useThemeContext()
   return (
     <Box sx={{ bgcolor: 'background.default', color: 'text.primary' }}>
-      {mode} mode
       <Header />
       <div className="container">
         <div className="introduction">
