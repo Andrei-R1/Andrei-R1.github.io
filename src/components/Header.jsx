@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 import '../styles/header.css'
 import githubD from '../assets/dark-mode/github.svg'
 import linkedinD from '../assets/dark-mode/linkedin.svg'
@@ -9,62 +9,73 @@ import gmailL from '../assets/light-mode/gmail.svg'
 import light from '../assets/dark-mode/light.svg'
 import dark from '../assets/light-mode/dark.svg'
 import { ToggleButton, ToggleButtonGroup } from '@mui/material'
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { useThemeContext } from './ThemeContext'
 
-const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+export default function Header() {
+  const { mode, toggleMode } = useThemeContext()
+  const handleThemeToggle = () => {
+    toggleMode()
+    document.body.setAttribute('data-theme', mode)
+  }
+  const [alignment, setAlignment] = React.useState('home')
+  const [links, setLinks] = React.useState([])
 
-function Header() {
-  const [mode, setMode] = React.useState('dark');
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
-    [mode],
-  );
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'dark' ? 'light' : 'dark'));
-      },
-    }),
-    [],
-  );
-
-  const [alignment, setAlignment] = React.useState('home');
-  const [links, setLinks] = React.useState([]);
   const handleAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
+    if (newAlignment !== null) {
+      setAlignment(newAlignment)
+    }
+  }
   const handleLinks = (event, newLinks) => {
-    setLinks(newLinks);
-  };
+    setLinks(newLinks)
+  }
+
+  const GmailButton = () => {
+    window.open('mailto:andreirive2003@gmail.com', '_blank')
+  }
+  const LinkedInButton = () => {
+    window.open('https://www.linkedin.com/in/andrei-rivera/', '_blank')
+  }
+  const GitHubButton = () => {
+    window.open('https://github.com/Andrei-R1', '_blank')
+  }
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <div className='header'>
-          <div className='left-header'>
-            <ToggleButtonGroup value={alignment} exclusive onChange={handleAlignment} aria-label="Page">
-              <ToggleButton value="home" href='/'>HOME</ToggleButton>
-              <ToggleButton value="projects" href='/projects'>PROJECTS</ToggleButton>
-              <ToggleButton value="contact" href='/contact'>CONTACT</ToggleButton>
-            </ToggleButtonGroup>
-          </div>
-          <div className='right-header'>
-            <ToggleButtonGroup value={links} exclusive onChange={handleLinks} aria-label="Links">
-              <ToggleButton value="gmail"><img src={mode === 'dark' ? gmailD : gmailL} alt=''/></ToggleButton>
-              <ToggleButton value="linkedin"><img src={mode === 'dark' ? linkedinD : linkedinL} alt=''/></ToggleButton>
-              <ToggleButton value="github"><img src={mode === 'dark' ? githubD : githubL} alt=''/></ToggleButton>
-              <ToggleButton value="theme"> <img src={mode === 'dark' ? light : dark} alt='' onClick={colorMode.toggleColorMode}/> </ToggleButton>
-            </ToggleButtonGroup>
-          </div>
-        </div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+    <div className="header">
+      <div className="left-header">
+        <ToggleButtonGroup
+          value={alignment}
+          size="large"
+          exclusive
+          onChange={handleAlignment}
+          aria-label="Page">
+          <ToggleButton value="home" href="/">
+            HOME
+          </ToggleButton>
+          <ToggleButton value="projects" href="/projects">
+            PROJECTS
+          </ToggleButton>
+          <ToggleButton value="contact" href="/contact">
+            CONTACT
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </div>
+      <div className="right-header">
+        <ToggleButtonGroup value={links} exclusive onChange={handleLinks} aria-label="Links">
+          <ToggleButton value="gmail" selected={false} onClick={GmailButton}>
+            <img src={mode === 'dark' ? gmailD : gmailL} alt="" />
+          </ToggleButton>
+          <ToggleButton value="linkedin" selected={false} onClick={LinkedInButton}>
+            <img src={mode === 'dark' ? linkedinD : linkedinL} alt="" />
+          </ToggleButton>
+          <ToggleButton value="github" selected={false} onClick={GitHubButton}>
+            <img src={mode === 'dark' ? githubD : githubL} alt="" />
+          </ToggleButton>
+          <ToggleButton value="theme" selected={false}>
+            {' '}
+            <img src={mode === 'dark' ? light : dark} alt="" onClick={handleThemeToggle} />{' '}
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </div>
+    </div>
   )
 }
-
-export default Header;

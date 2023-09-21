@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-body{
+:root {
+  --background-dark: #000000;
+  --background-light: #FFFFFF;
+}
+
+body {
   font-family: 'Inter';
-  color: white;
+  background-color: var(--background-dark);
+}
+
+body[data-theme='dark'] {
+  font-family: 'Inter';
+  background-color: var(--background-light);
 }
