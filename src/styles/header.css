@@ -1,6 +1,13 @@
 .header{
-  margin-top: 1%;
+  margin-top: 2%;
   display:flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 15%;
+  padding-left: 3%;
+}
+
+span {
+  align-self: center;
+  font-size: 44px;
 }

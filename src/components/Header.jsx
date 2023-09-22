@@ -17,6 +17,7 @@ export default function Header() {
     toggleMode()
     document.body.setAttribute('data-theme', mode)
   }
+
   const [alignment, setAlignment] = React.useState('home')
   const [links, setLinks] = React.useState([])
 
@@ -42,35 +43,56 @@ export default function Header() {
   return (
     <div className="header">
       <div className="left-header">
-        <ToggleButtonGroup
-          value={alignment}
-          size="large"
-          exclusive
-          onChange={handleAlignment}
-          aria-label="Page">
-          <ToggleButton value="home" selected={false} href="/">
+        <ToggleButtonGroup value={alignment} exclusive onChange={handleAlignment} aria-label="Page">
+          <ToggleButton
+            value="home"
+            selected={false}
+            href="/"
+            sx={{ border: 'none', fontSize: '28px', color: 'text.primary', paddingLeft: '15%', paddingRight: '15%'}}>
             HOME
           </ToggleButton>
-          <ToggleButton value="projects" selected={false} href="/projects">
+          <span>|</span>
+          <ToggleButton
+            value="projects"
+            selected={false}
+            href="/projects"
+            sx={{ border: 'none', fontSize: '28px', color: 'text.primary', paddingLeft: '15%', paddingRight: '15%'}}>
             PROJECTS
           </ToggleButton>
-          <ToggleButton value="contact" selected={false} href="/contact">
+          <span>|</span>
+          <ToggleButton
+            value="contact"
+            selected={false}
+            href="/contact"
+            sx={{ border: 'none', fontSize: '28px', color: 'text.primary', paddingLeft: '15%', paddingRight: '15%'}}>
             CONTACT
           </ToggleButton>
         </ToggleButtonGroup>
       </div>
       <div className="right-header">
         <ToggleButtonGroup value={links} exclusive onChange={handleLinks} aria-label="Links">
-          <ToggleButton value="gmail" selected={false} onClick={GmailButton}>
+          <ToggleButton
+            value="gmail"
+            selected={false}
+            onClick={GmailButton}
+            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
             <img src={mode === 'dark' ? gmailD : gmailL} alt="" />
           </ToggleButton>
-          <ToggleButton value="linkedin" selected={false} onClick={LinkedInButton}>
+          <ToggleButton
+            value="linkedin"
+            selected={false}
+            onClick={LinkedInButton}
+            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
             <img src={mode === 'dark' ? linkedinD : linkedinL} alt="" />
           </ToggleButton>
-          <ToggleButton value="github" selected={false} onClick={GitHubButton}>
+          <ToggleButton
+            value="github"
+            selected={false}
+            onClick={GitHubButton}
+            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
             <img src={mode === 'dark' ? githubD : githubL} alt="" />
           </ToggleButton>
-          <ToggleButton value="theme" selected={false}>
+          <ToggleButton value="theme" selected={false} sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
             {' '}
             <img src={mode === 'dark' ? light : dark} alt="" onClick={handleThemeToggle} />{' '}
           </ToggleButton>
