@@ -48,7 +48,13 @@ export default function Header() {
             value="home"
             selected={false}
             href="/"
-            sx={{ border: 'none', fontSize: '28px', color: 'text.primary', paddingLeft: '15%', paddingRight: '15%'}}>
+            sx={{
+              border: 'none',
+              fontSize: '28px',
+              color: 'text.primary',
+              paddingLeft: '15%',
+              paddingRight: '15%',
+            }}>
             HOME
           </ToggleButton>
           <span>|</span>
@@ -56,7 +62,13 @@ export default function Header() {
             value="projects"
             selected={false}
             href="/projects"
-            sx={{ border: 'none', fontSize: '28px', color: 'text.primary', paddingLeft: '15%', paddingRight: '15%'}}>
+            sx={{
+              border: 'none',
+              fontSize: '28px',
+              color: 'text.primary',
+              paddingLeft: '15%',
+              paddingRight: '15%',
+            }}>
             PROJECTS
           </ToggleButton>
           <span>|</span>
@@ -64,7 +76,13 @@ export default function Header() {
             value="contact"
             selected={false}
             href="/contact"
-            sx={{ border: 'none', fontSize: '28px', color: 'text.primary', paddingLeft: '15%', paddingRight: '15%'}}>
+            sx={{
+              border: 'none',
+              fontSize: '28px',
+              color: 'text.primary',
+              paddingLeft: '15%',
+              paddingRight: '15%',
+            }}>
             CONTACT
           </ToggleButton>
         </ToggleButtonGroup>
@@ -75,24 +93,27 @@ export default function Header() {
             value="gmail"
             selected={false}
             onClick={GmailButton}
-            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
+            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
             <img src={mode === 'dark' ? gmailD : gmailL} alt="" />
           </ToggleButton>
           <ToggleButton
             value="linkedin"
             selected={false}
             onClick={LinkedInButton}
-            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
+            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
             <img src={mode === 'dark' ? linkedinD : linkedinL} alt="" />
           </ToggleButton>
           <ToggleButton
             value="github"
             selected={false}
             onClick={GitHubButton}
-            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
+            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
             <img src={mode === 'dark' ? githubD : githubL} alt="" />
           </ToggleButton>
-          <ToggleButton value="theme" selected={false} sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%'}}>
+          <ToggleButton
+            value="theme"
+            selected={false}
+            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
             {' '}
             <img src={mode === 'dark' ? light : dark} alt="" onClick={handleThemeToggle} />{' '}
           </ToggleButton>
