@@ -2,17 +2,71 @@
   {
     "id": 1,
     "image": "/images/",
-    "title": "Project 1",
-    "description": "Description of Project 1",
-    "date": "2019-01-01",
-    "url": "https://www.github.com"
+    "title": "Doreads - Book Review App",
+    "description": "Doreads is a book review app that allows users to search for books and leave reviews. It also uses the Goodreads API to pull in ratings from a broader audience.",
+    "date": "Jan 2023 - Apr 2023",
+    "url": "https://github.com/Andrei-R1/doreads-frontend",
+    "tags": [
+      "JavaScript",
+      "React",
+      "MaterialUI",
+      "Frontend"
+    ]
   },
   {
     "id": 2,
     "image": "/images/",
-    "title": "Project 2",
-    "description": "Description of Project 2",
-    "date": "2020-01-01",
-    "url": "https://www.github.com"
+    "title": "Doreads - API",
+    "description": "Doreads is a book review app that allows users to search for books and leave reviews. It also uses the Goodreads API to pull in ratings from a broader audience.",
+    "date": "Jan 2023 - Apr 2023",
+    "url": "https://github.com/Andrei-R1/doreads-backend",
+    "tags": [
+      "TypeScript",
+      "Rest API",
+      "Express",
+      "Backend"
+    ]
+  },
+  {
+    "id": 3,
+    "image": "/images/",
+    "title": "Doreads - Image Server",
+    "description": "Doreads is a book review app that allows users to search for books and leave reviews. It also uses the Goodreads API to pull in ratings from a broader audience.",
+    "date": "Jan 2023 - Apr 2023",
+    "url": "https://github.com/Andrei-R1/doreads-image-server",
+    "tags": [
+      "TypeScript",
+      "PostgeSQL",
+      "Express",
+      "Image Server"
+    ]
+  },
+  {
+    "id": 4,
+    "image": "/images/",
+    "title": "Twitter Clone - Social Web App",
+    "description": "Doreads is a book review app that allows users to search for books and leave reviews. It also uses the Goodreads API to pull in ratings from a broader audience.",
+    "date": "Dec 2022",
+    "url": "https://github.com/Andrei-R1/twitter-clone-frontend-v2",
+    "tags": [
+      "TypeScript",
+      "React",
+      "HTML/CSS",
+      "Frontend"
+    ]
+  },
+  {
+    "id": 5,
+    "image": "/images/",
+    "title": "Twitter Clone - API",
+    "description": "Doreads is a book review app that allows users to search for books and leave reviews. It also uses the Goodreads API to pull in ratings from a broader audience.",
+    "date": "Dec 2022",
+    "url": "https://github.com/Andrei-R1/twitter-clone-backend-v2",
+    "tags": [
+      "TypeScript",
+      "GraphQL",
+      "Apollo Server",
+      "Backend"
+    ]
   }
 ]
