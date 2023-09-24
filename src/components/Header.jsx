@@ -8,28 +8,16 @@ import linkedinL from '../assets/light-mode/linkedin.svg'
 import gmailL from '../assets/light-mode/gmail.svg'
 import light from '../assets/dark-mode/light.svg'
 import dark from '../assets/light-mode/dark.svg'
-import { ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { useThemeContext } from './ThemeContext'
+import { AppBar, Toolbar, Typography, IconButton } from '@mui/material'
 
-export default function Header() {
+
+export default function Headerv2() {
   const { mode, toggleMode } = useThemeContext()
   const handleThemeToggle = () => {
     toggleMode()
     document.body.setAttribute('data-theme', mode)
   }
-
-  const [alignment, setAlignment] = React.useState('home')
-  const [links, setLinks] = React.useState([])
-
-  const handleAlignment = (event, newAlignment) => {
-    if (newAlignment !== null) {
-      setAlignment(newAlignment)
-    }
-  }
-  const handleLinks = (event, newLinks) => {
-    setLinks(newLinks)
-  }
-
   const GmailButton = () => {
     window.open('mailto:andreirive2003@gmail.com', '_blank')
   }
@@ -41,84 +29,36 @@ export default function Header() {
   }
 
   return (
-    <div className="header">
-      <div className="left-header">
-        <ToggleButtonGroup value={alignment} exclusive onChange={handleAlignment} aria-label="Page">
-          <ToggleButton
-            value="home"
-            selected={false}
-            href="/"
-            sx={{
-              border: 'none',
-              fontSize: '28px',
-              color: 'text.primary',
-              paddingLeft: '15%',
-              paddingRight: '15%',
-            }}>
+    <AppBar position="static">
+      <Toolbar sx={{ bgcolor: 'background.default', color: 'text.primary', display: 'flex'}}>
+        <Typography variant="h6" component="div">
+          <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
             HOME
-          </ToggleButton>
-          <span>|</span>
-          <ToggleButton
-            value="projects"
-            selected={false}
-            href="/projects"
-            sx={{
-              border: 'none',
-              fontSize: '28px',
-              color: 'text.primary',
-              paddingLeft: '15%',
-              paddingRight: '15%',
-            }}>
+          </a>
+        </Typography>
+        <Typography variant="h6" component="div">
+          <a href="/projects" style={{ textDecoration: 'none', color: 'inherit' }}>
             PROJECTS
-          </ToggleButton>
-          <span>|</span>
-          <ToggleButton
-            value="contact"
-            selected={false}
-            href="/contact"
-            sx={{
-              border: 'none',
-              fontSize: '28px',
-              color: 'text.primary',
-              paddingLeft: '15%',
-              paddingRight: '15%',
-            }}>
+          </a>
+        </Typography>
+        <Typography variant="h6" component="div">
+          <a href="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>
             CONTACT
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </div>
-      <div className="right-header">
-        <ToggleButtonGroup value={links} exclusive onChange={handleLinks} aria-label="Links">
-          <ToggleButton
-            value="gmail"
-            selected={false}
-            onClick={GmailButton}
-            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
-            <img src={mode === 'dark' ? gmailD : gmailL} alt="" />
-          </ToggleButton>
-          <ToggleButton
-            value="linkedin"
-            selected={false}
-            onClick={LinkedInButton}
-            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
-            <img src={mode === 'dark' ? linkedinD : linkedinL} alt="" />
-          </ToggleButton>
-          <ToggleButton
-            value="github"
-            selected={false}
-            onClick={GitHubButton}
-            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
-            <img src={mode === 'dark' ? githubD : githubL} alt="" />
-          </ToggleButton>
-          <ToggleButton
-            value="theme"
-            selected={false}
-            sx={{ border: 'none', paddingLeft: '15%', paddingRight: '15%' }}>
-            {' '}
-            <img src={mode === 'dark' ? light : dark} alt="" onClick={handleThemeToggle} />{' '}
-          </ToggleButton>
-        </ToggleButtonGroup>
-      </div>
-    </div>
+          </a>
+        </Typography>
+        <IconButton onClick={GmailButton}>
+          <img src={mode === 'dark' ? gmailD : gmailL} alt="" />
+        </IconButton>
+        <IconButton onClick={LinkedInButton}>
+          <img src={mode === 'dark' ? linkedinD : linkedinL} alt="" />
+        </IconButton>
+        <IconButton onClick={GitHubButton}>
+          <img src={mode === 'dark' ? githubD : githubL} alt="" />
+        </IconButton>
+        <IconButton onClick={handleThemeToggle}>
+          <img src={mode === 'dark' ? light : dark} alt="" />
+        </IconButton>
+      </Toolbar>
+    </AppBar>
   )
 }
