@@ -119,7 +119,7 @@ export default function Header() {
           <Box classname="left-header" sx={{ paddingLeft:5, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button>
               <Typography
-                variant="h6"
+                variant="h5"
                 noWrap
                 component="a"
                 href="/"
@@ -136,13 +136,13 @@ export default function Header() {
               </Typography>
             </Button>
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="p"
               sx={{
                 fontFamily: 'Inter',
                 fontWeight: 500,
-                fontSize: '1.7rem',
+                fontSize: '2rem',
                 color: 'text.primary',
                 alignSelf: 'center',
               }}>
@@ -150,7 +150,7 @@ export default function Header() {
             </Typography>
             <Button>
               <Typography
-                variant="h6"
+                variant="h5"
                 noWrap
                 component="a"
                 href="/projects"
@@ -167,13 +167,13 @@ export default function Header() {
               </Typography>
             </Button>
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="p"
               sx={{
                 fontFamily: 'Inter',
                 fontWeight: 500,
-                fontSize: '1.7rem',
+                fontSize: '2rem',
                 color: 'text.primary',
                 alignSelf: 'center',
               }}>
@@ -181,7 +181,7 @@ export default function Header() {
             </Typography>
             <Button>
               <Typography
-                variant="h6"
+                variant="h5"
                 noWrap
                 component="a"
                 href="/contact"
