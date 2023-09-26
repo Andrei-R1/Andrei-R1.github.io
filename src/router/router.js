@@ -1,8 +1,9 @@
 import Contact from '../pages/Contact';
 import Projects from '../pages/Projects';
 import Home from '../pages/Home';
+import { createHashRouter } from 'react-router-dom';
 
-export const routes = [
+export const router = createHashRouter([
   {
     path: '/',
     element: <Home/>
@@ -15,4 +16,4 @@ export const routes = [
     path: '/projects',
     element: <Projects/>
   }
-];
+]);

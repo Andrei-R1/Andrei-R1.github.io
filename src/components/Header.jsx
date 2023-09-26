@@ -71,7 +71,7 @@ export default function Header() {
                   variant="h6"
                   noWrap
                   component="a"
-                  href="/"
+                  href="/#/"
                   sx={{
                     fontFamily: 'Inter',
                     fontWeight: 700,
@@ -87,7 +87,7 @@ export default function Header() {
                   variant="h6"
                   noWrap
                   component="a"
-                  href="/projects"
+                  href="/#/projects"
                   sx={{
                     fontFamily: 'Inter',
                     fontWeight: 700,
@@ -103,7 +103,7 @@ export default function Header() {
                   variant="h6"
                   noWrap
                   component="a"
-                  href="/contact"
+                  href="/#/contact"
                   sx={{
                     fontFamily: 'Inter',
                     fontWeight: 700,
@@ -122,7 +122,7 @@ export default function Header() {
                 variant="h5"
                 noWrap
                 component="a"
-                href="/"
+                href="/#/"
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: 700,
@@ -153,7 +153,7 @@ export default function Header() {
                 variant="h5"
                 noWrap
                 component="a"
-                href="/projects"
+                href="/#/projects"
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: 700,
@@ -184,7 +184,7 @@ export default function Header() {
                 variant="h5"
                 noWrap
                 component="a"
-                href="/contact"
+                href="/#/contact"
                 sx={{
                   fontFamily: 'Inter',
                   fontWeight: 700,
