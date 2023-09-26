@@ -116,7 +116,7 @@ export default function Header() {
               </MenuItem>
             </Menu>
           </Box>
-          <Box classname="left-header" sx={{ paddingLeft:5, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box className="left-header" sx={{ paddingLeft:5, flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button>
               <Typography
                 variant="h5"
@@ -198,7 +198,7 @@ export default function Header() {
               </Typography>
             </Button>
           </Box>
-          <Box classname="right-header" sx={{ paddingRight:5, display: { xs: 'flex', md: 'flex' }}}>
+          <Box className="right-header" sx={{ paddingRight:5, display: { xs: 'flex', md: 'flex' }}}>
             <IconButton onClick={GmailButton} sx={{mr:2, ml:2}}>
               <img src={mode === 'dark' ? gmailD : gmailL} alt=""/>
             </IconButton>
